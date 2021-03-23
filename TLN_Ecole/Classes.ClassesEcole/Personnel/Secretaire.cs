@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Classes.ClassesEcole
 {
-    class Ecole
+    class Secretaire
     {
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
