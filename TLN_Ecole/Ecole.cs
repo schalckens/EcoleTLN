@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcoleTLN
+namespace Classes.ClassesEcole
 {
-    class Program
+    class Ecole
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
