@@ -14,10 +14,10 @@ namespace Classes.ClassesEcole
         {
             this.noteMoyenne = noteMoyenne;
         }
-
         public override string ToString()
         {
             return base.ToString() + "\n Moyenne : " + noteMoyenne ;
         }
+        public double NoteMoyenne { get => noteMoyenne; }
     }
 }

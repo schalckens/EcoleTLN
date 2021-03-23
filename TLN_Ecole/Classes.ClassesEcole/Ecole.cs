@@ -31,16 +31,42 @@ namespace Classes.ClassesEcole
 
         public double AncienneteMoyenne() { }
 
-        public Boolean EstEtudiant() { }
+        public Boolean EstEtudiant(Contact contact) { return contact is Etudiant; }
 
-        public int NbContacts() { return 3; }
+        public int NbContacts() { return this.contacts.Count; }
 
-        public double MoyenneEtudiantRegulier() { }
+        public double MoyenneEtudiantRegulier()  
+        {
+            double som = 0;
+            foreach (Contact contact in contacts.Values)
+            {
+                if (contact is EtudiantRegulier unContact)
+                {
+                    // on caste l'objet contact de la classe Contact
+                    // en objet de la classe EtudiantRegulier
+                    //som += ((EtudiantRegulier)contact).NoteMoyenne;
+                    som += unContact.NoteMoyenne;
+
+                }
+            }
+            return som;
+        }
 
         public void AjouterContact(Contact contact) { this.contacts.Add(contact.Matricule,contact); }
-
-        public int NbEtudiants() { }
-
+        public void AjouterContact(Dictionary<Int32, Contact> contact) { this.contacts.Concat(contact); }
+        public int NbEtudiants() 
+        {
+            int a = 0;
+            foreach (Contact contact in contacts.Values)
+            {
+                if (contact is Etudiant)
+                {
+                    a++;
+                }
+            }
+            return a;
+        }
+        public Boolean ExisteContact(int matricule) { return this.contacts.ContainsKey(matricule); }
         public Boolean ExisteContact(Contact contact) { return this.contacts.ContainsKey(contact.Matricule); }
 
 
