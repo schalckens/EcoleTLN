@@ -24,40 +24,7 @@ namespace Classes.ClassesEcole
             string a = "";
             foreach( Contact contact in contacts.Values )
             {
-                if (contact is Etudiant) 
-                {
-                    if (contact is EtudiantRegulier)
-                    {
-                        a += "\n Etudiant Régulier : " + contact.ToString() + "\n";
-                    }
-                    else if (contact is EtudiantEchange)
-                    {
-                        a += "\n Etudiant Echange : " + contact.ToString() + "\n";
-                    }
-                    else
-                    {
-                        a += "\n Etudiant : " + contact.ToString() + "\n";
-                    }
-                }
-                else if (contact is Personnel) 
-                {
-                    if (contact is Enseignant)
-                    {
-                        a += "\n Enseignant : " + contact.ToString() + "\n";
-                    }
-                    else if (contact is Secretaire)
-                    {
-                        a += "\n Secretaire: " + contact.ToString() + "\n";
-                    }
-                    else
-                    {
-                        a += "\n Personnel : " + contact.ToString() + "\n";
-                    }
-                }
-                else 
-                {
-                    a += "\n Contact : " + contact.ToString() + "\n"; 
-                }
+                a += contact.ToString();
             } 
             return a;
         }

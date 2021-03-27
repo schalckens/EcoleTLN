@@ -17,7 +17,7 @@ namespace Classes.ClassesEcole
 
         public override string ToString()
         {
-            return base.ToString() + "\n\t Section" + section;
+            return "\n Enseignant : " + base.ToString() + "\n\t Section" + section + "\n";
         }
     }
 }

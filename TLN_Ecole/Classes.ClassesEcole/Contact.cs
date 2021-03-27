@@ -16,12 +16,12 @@ namespace Classes.ClassesEcole
         {
             this.matricule = matricule;
             this.nom = nom;
-            this.anneeArrivee = AnneeArrivee;
+            this.AnneeArrivee = anneeArrivee;
         }
 
         public override string ToString()
         {
-            return "\n\t Matricule : " + this.matricule + "\n\t Nom : " + this.nom + "\n\t Année : " + this.AnneeArrivee;
+            return "\n\t Matricule : " + this.matricule + "\n\t Nom : " + this.nom + "\n\t Année : " + this.anneeArrivee;
         }
 
         public int Matricule { get => matricule; }

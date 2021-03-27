@@ -11,7 +11,7 @@ namespace Classes.ClassesEcole
         public Secretaire(int matricule, string nom, int anneeArrivee, string nomLaboratoire, double salaire) : base(matricule, nom, anneeArrivee, nomLaboratoire, salaire) { }
         public override string ToString()
         {
-            return base.ToString();
+            return "\n Secretaire : " + base.ToString() + "\n";
         }
     }
 }
