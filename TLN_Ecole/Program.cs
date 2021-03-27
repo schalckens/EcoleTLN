@@ -48,15 +48,5 @@ namespace EcoleTLN
             contacts.Add(1409, new Secretaire(1409, "Sophie Scribona", 2005, "Machine à Taper (LMT)", 5000));
             return contacts;
         }
-
-
-        //Ecole Bona = new Ecole("Bonaparte", 1920);
-        //Contact contact = new Contact(1, "Bastien", 2000);
-        //Bona.AjouterContact(contact);
-        //    contact = new EtudiantRegulier(1200, "Gaston Peutimide", 2013, "SSC", 6);
-        //Bona.AjouterContact(contact);
-        //    contact = new EtudiantRegulier(1204, "Yvan Rattrapeur", 2011, "SSC", 2.5);
-        //Bona.AjouterContact(contact);
-        //    contact = new EtudiantEchange(1345, "Yvan Rattrapeur", 2011, "SSC", 2.5);
     }
 }
