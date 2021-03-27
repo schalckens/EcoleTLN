@@ -9,31 +9,39 @@ namespace EcoleTLN
     {
         static void Main()
         {
-            Ecole ecoleTLN = new Ecole("écoleTLN",1980);
-            Console.WriteLine("---- Ajout d'une collection de contacts ----");
-            ecoleTLN.AjouterContact(CreerContacts());
-            Console.WriteLine("Parmi les {0} personnes de l'{1}, {2} sont des étudiants",ecoleTLN.NbContacts(),ecoleTLN.Nom,ecoleTLN.NbEtudiants());
-            Console.WriteLine("Ils sont à l'école depuis en moyenne {0} ans.", ecoleTLN.AncienneteMoyenne());
-            Console.WriteLine("----  Affichage Tous ----");
-            Console.WriteLine(ecoleTLN.AfficheTous());
-            Console.WriteLine("Moyenne des étudiants réguliers = {0}",ecoleTLN.MoyenneEtudiantRegulier());
-            Console.WriteLine("---- Ajout d'un contact ----");
-            Contact contact = new Contact(1444, "Valentine Schalckens", 2020);
-            ecoleTLN.AjouterContact(contact);
-            Console.WriteLine("---- Vérifications ----");
-            Console.WriteLine("Nb contacts : {0}",ecoleTLN.NbContacts());
-            List<int> a = new List<int> {1200, 9999, 1444, 2222};
-            foreach( int b in a)
+            try
             {
-                if(ecoleTLN.ExisteContact(b))
+                Ecole ecoleTLN = new Ecole("écoleTLN", 1980);
+                Console.WriteLine("---- Ajout d'une collection de contacts ----");
+                ecoleTLN.AjouterContact(CreerContacts());
+                Console.WriteLine("Parmi les {0} personnes de l'{1}, {2} sont des étudiants", ecoleTLN.NbContacts(), ecoleTLN.Nom, ecoleTLN.NbEtudiants());
+                Console.WriteLine("Ils sont à l'école depuis en moyenne {0} ans.", ecoleTLN.AncienneteMoyenne());
+                Console.WriteLine("----  Affichage Tous ----");
+                Console.WriteLine(ecoleTLN.AfficheTous());
+                Console.WriteLine("Moyenne des étudiants réguliers = {0}", ecoleTLN.MoyenneEtudiantRegulier());
+                Console.WriteLine("---- Ajout d'un contact ----");
+                Contact contact = new Contact(1444, "Valentine Schalckens", 2020);
+                ecoleTLN.AjouterContact(contact);
+                Console.WriteLine("---- Vérifications ----");
+                Console.WriteLine("Nb contacts : {0}", ecoleTLN.NbContacts());
+                List<int> a = new List<int> { 1200, 9999, 1444, 2222 };
+                foreach (int b in a)
                 {
-                    Console.WriteLine("{0} existe.", b);
-                }
-                else
-                {
-                    Console.WriteLine("{0} n'existe pas", b);
+                    if (ecoleTLN.ExisteContact(b))
+                    {
+                        Console.WriteLine("{0} existe.", b);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} n'existe pas", b);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
             Console.WriteLine("---- Fin du Programme ----");
             Console.ReadKey();
         }

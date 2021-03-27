@@ -16,16 +16,30 @@ namespace Classes.ClassesEcole
         {
             this.matricule = matricule;
             this.nom = nom;
-            this.anneeArrivee = anneeArrivee;
+            this.anneeArrivee = AnneeArrivee;
         }
 
         public override string ToString()
         {
-            return "\n\t Matricule : " + this.matricule + "\n\t Nom : " + this.nom + "\n\t Année : " + this.anneeArrivee;
+            return "\n\t Matricule : " + this.matricule + "\n\t Nom : " + this.nom + "\n\t Année : " + this.AnneeArrivee;
         }
 
         public int Matricule { get => matricule; }
         public string Nom { get => nom; }
-        public int AnneeArrivee { get => anneeArrivee; }
+        public int AnneeArrivee 
+        { 
+            get => anneeArrivee; 
+            set 
+            { 
+                if ( DateTime.Now.Year >= value)
+                {
+                    this.anneeArrivee = value;
+                }
+                else
+                {
+                    throw new Exception("Annee d'arrivée non valide.");
+                }
+            } 
+        }
     }
 }
