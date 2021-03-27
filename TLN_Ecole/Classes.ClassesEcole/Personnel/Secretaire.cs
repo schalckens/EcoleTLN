@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Classes.ClassesEcole
 {
-    class Secretaire
+    class Secretaire : Personnel
     {
+        public Secretaire(int matricule, string nom, int anneeArrivee, string nomLaboratoire, double salaire) : base(matricule, nom, anneeArrivee, nomLaboratoire, salaire) { }
         public override string ToString()
         {
             return base.ToString();

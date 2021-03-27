@@ -17,7 +17,7 @@ namespace Classes.ClassesEcole
 
         public override string ToString()
         {
-            return base.ToString() + "\n Université d'origine : " + universiteOrigine;
+            return base.ToString() + "\n\t Université d'origine : " + universiteOrigine;
         }
 
     }

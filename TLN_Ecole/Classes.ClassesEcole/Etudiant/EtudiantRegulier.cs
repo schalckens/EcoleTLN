@@ -16,7 +16,7 @@ namespace Classes.ClassesEcole
         }
         public override string ToString()
         {
-            return base.ToString() + "\n Moyenne : " + noteMoyenne ;
+            return base.ToString() + "\n\t Moyenne : " + noteMoyenne ;
         }
         public double NoteMoyenne { get => noteMoyenne; }
     }

@@ -24,12 +24,54 @@ namespace Classes.ClassesEcole
             string a = "";
             foreach( Contact contact in contacts.Values )
             {
-                a += contact.ToString();
+                if (contact is Etudiant) 
+                {
+                    if (contact is EtudiantRegulier)
+                    {
+                        a += "\n Etudiant Régulier : " + contact.ToString() + "\n";
+                    }
+                    else if (contact is EtudiantEchange)
+                    {
+                        a += "\n Etudiant Echange : " + contact.ToString() + "\n";
+                    }
+                    else
+                    {
+                        a += "\n Etudiant : " + contact.ToString() + "\n";
+                    }
+                }
+                else if (contact is Personnel) 
+                {
+                    if (contact is Enseignant)
+                    {
+                        a += "\n Enseignant : " + contact.ToString() + "\n";
+                    }
+                    else if (contact is Secretaire)
+                    {
+                        a += "\n Secretaire: " + contact.ToString() + "\n";
+                    }
+                    else
+                    {
+                        a += "\n Personnel : " + contact.ToString() + "\n";
+                    }
+                }
+                else 
+                {
+                    a += "\n Contact : " + contact.ToString() + "\n"; 
+                }
             } 
             return a;
         }
 
-        public double AncienneteMoyenne() { }
+        public double AncienneteMoyenne() 
+        {
+            double somme = 0;
+            foreach(Contact contact in contacts.Values)
+            {
+                somme += (DateTime.Now.Year-contact.AnneeArrivee);
+            }
+            double moyenne = somme / contacts.Count;
+            return moyenne;
+        }
 
         public Boolean EstEtudiant(Contact contact) { return contact is Etudiant; }
 
@@ -38,6 +80,7 @@ namespace Classes.ClassesEcole
         public double MoyenneEtudiantRegulier()  
         {
             double som = 0;
+            int cpt = 0;
             foreach (Contact contact in contacts.Values)
             {
                 if (contact is EtudiantRegulier unContact)
@@ -46,14 +89,25 @@ namespace Classes.ClassesEcole
                     // en objet de la classe EtudiantRegulier
                     //som += ((EtudiantRegulier)contact).NoteMoyenne;
                     som += unContact.NoteMoyenne;
+                    cpt++;
 
                 }
             }
-            return som;
+            return som/cpt;
         }
 
         public void AjouterContact(Contact contact) { this.contacts.Add(contact.Matricule,contact); }
-        public void AjouterContact(Dictionary<Int32, Contact> contact) { this.contacts.Concat(contact); }
+        public void AjouterContact(Dictionary<Int32, Contact> contacts2) 
+        { 
+            //Méthode 1 ligne
+            //this.contacts = this.contacts.Select(x => x ).Concat(contact.Select(x => x)).ToDictionary(contacts,contact);
+            //
+            //Méthode 2 
+            foreach(Contact contact in contacts2.Values)
+            {
+                this.AjouterContact(contact);
+            }
+        }
         public int NbEtudiants() 
         {
             int a = 0;

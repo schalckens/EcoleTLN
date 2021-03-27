@@ -21,7 +21,7 @@ namespace Classes.ClassesEcole
 
         public override string ToString()
         {
-            return "\n Matricule : " + matricule + "\n Nom : " + nom + "\n Année : " + anneeArrivee;
+            return "\n\t Matricule : " + this.matricule + "\n\t Nom : " + this.nom + "\n\t Année : " + this.anneeArrivee;
         }
 
         public int Matricule { get => matricule; }

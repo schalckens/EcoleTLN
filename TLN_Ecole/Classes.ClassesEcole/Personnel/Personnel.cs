@@ -19,7 +19,7 @@ namespace Classes.ClassesEcole
 
         public override string ToString()
         {
-            return base.ToString() + "\n Laboratoire : " + nomLaboratoire + "\n Salaire : " + salaire;
+            return base.ToString() + "\n\t Laboratoire : " + nomLaboratoire + "\n\t Salaire : " + salaire;
         }
     }
 }
